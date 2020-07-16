@@ -28,19 +28,19 @@ public class Autentificar
             }
             else if (cont == 1)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("\n\n ~ Acaba de ingresar con el USUARIO: {0} y su ROL es: {1}.", usuarios[i], rol[i]);
                 Console.WriteLine(" ~ Este usuario fue creado : {0}", fecha_de_creacion[i]);
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n\n ~ Presione Escape para salir. ~");
                 Console.WriteLine(" ~ Presione S para cerrar sesion e iniciar con otro usuario. ~  ");
 
-                ConsoleKeyInfo key = Console.ReadKey(true);
-                if (key.Key == ConsoleKey.Escape)
+                ConsoleKeyInfo keys = Console.ReadKey(true);
+                if (keys.Key == ConsoleKey.Escape)
                 {
                     Environment.Exit(0);
                 }
-                else if(key.Key == ConsoleKey.S)
+                else if(keys.Key == ConsoleKey.S)
                 {
                     return false;
                 }
