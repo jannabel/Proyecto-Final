@@ -127,10 +127,10 @@ namespace Atentificacion_y_Seguridad
                     {
                         pass = "";
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");                        
+                        Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");                        
                         pass = "";
                         Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine(" ~ Ingrese su clave: ");
+                        Console.Write(" ~ Ingrese su clave: ");
                         continue;
                     }
                  
@@ -187,7 +187,7 @@ namespace Atentificacion_y_Seguridad
                         {
                             user = "";
                             Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
+                            Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
                             user = "";
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Write(" ~ Ingrese su usuario: ");
@@ -232,9 +232,9 @@ namespace Atentificacion_y_Seguridad
                         {
                             pass = "";
                             Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");
+                            Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");
                             Console.ForegroundColor = ConsoleColor.White;
-                            Console.WriteLine(" ~ Ingrese su clave: ");
+                            Console.Write(" ~ Ingrese su clave: ");
                             continue;
                         }
 
