@@ -21,10 +21,11 @@ namespace Atentificacion_y_Seguridad
 {
     class Program
     {
-               
+
+      
         static void Main(string[] args)
         {
-            long[] usuarios = { 00102852605, 12345678910, 25689741256, 46100000451};
+            string[] usuarios = { "001-0285260-5", "123-4567891-0", "256-8974125-6", "461-0000045-1"};
             int[] password = { 1234, 5670, 8901, 1010 };
             String[] rol = { "Supervisor", "Administrador", "Vendedor" , "Vendedor" };
             bool[] estado= { true, true, false, true};
@@ -32,15 +33,19 @@ namespace Atentificacion_y_Seguridad
              DateTime fecha1 = new DateTime(2020, 7, 14); DateTime fecha2 = new DateTime(2020, 7, 13);
              DateTime fecha3 = new DateTime(2020, 6, 10);  DateTime fecha4 = new DateTime(2020, 1, 11);
 
-             DateTime[] fecha_de_creacion = {fecha1, fecha3, fecha3, fecha4};
+            Console.ForegroundColor = ConsoleColor.White;
 
-             Console.WriteLine("\n .............................................");
-             Console.WriteLine(" ............. SISTEMA DE ACCESO ............. ");
-             Console.WriteLine(" .............................................");
+            DateTime[] fecha_de_creacion = {fecha1, fecha3, fecha3, fecha4};
+            Console.WriteLine("\n .............................................");
+            Console.WriteLine(" .............................................");
+            Console.WriteLine(" ............. SISTEMA DE ACCESO ............. ");
+            Console.WriteLine(" .............................................");
+            Console.WriteLine(" .............................................");
 
-             Console.Write("\n ~ Ingrese su usuario: ");
-             long user = Convert.ToInt64(Console.ReadLine());
-             Console.Write(" ~ Ingrese su clave: ");
+
+            Console.Write("\n ~ Ingrese su usuario: ");
+            string user =Console.ReadLine();
+            Console.Write(" ~ Ingrese su clave: ");
 
             string pass = "";
 
@@ -70,13 +75,16 @@ namespace Atentificacion_y_Seguridad
             while (Autentificar.comprobar(usuarios, rol, estado, password, pass, user, fecha_de_creacion) == false)
              {
              pass = "";
-             Console.ReadKey();
+             Console.ReadKey();                
              Console.Clear();
+             Console.ForegroundColor = ConsoleColor.White;
              Console.WriteLine("\n .............................................");
+             Console.WriteLine(" .............................................");
              Console.WriteLine(" ............. SISTEMA DE ACCESO ............. ");
              Console.WriteLine(" .............................................");
+             Console.WriteLine(" .............................................");
              Console.Write("\n ~ Ingrese su usuario: ");
-             user = Convert.ToInt64(Console.ReadLine());
+             user = Console.ReadLine();
              Console.Write(" ~ Ingrese su clave: ");
 
              do
