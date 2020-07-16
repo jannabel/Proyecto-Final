@@ -79,11 +79,11 @@ namespace Atentificacion_y_Seguridad
                     {
                         user = "";
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
-                        Console.ReadKey();
+                        Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
+                        
                         user = "";
                         Console.ForegroundColor = ConsoleColor.White;
-                        Console.Write("\n ~ Ingrese su usuario: ");
+                        Console.Write(" ~ Ingrese su usuario: ");
                         continue;
                     }
 
@@ -129,9 +129,8 @@ namespace Atentificacion_y_Seguridad
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");                        
                         pass = "";
-                        Console.ReadKey();
                         Console.ForegroundColor = ConsoleColor.White;
-                        Console.Write("\n ~ Ingrese su clave: ");
+                        Console.WriteLine(" ~ Ingrese su clave: ");
                         continue;
                     }
                  
@@ -190,9 +189,8 @@ namespace Atentificacion_y_Seguridad
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
                             user = "";
-                            Console.ReadKey();
                             Console.ForegroundColor = ConsoleColor.White;
-                            Console.Write("\n ~ Ingrese su usuario: ");
+                            Console.Write(" ~ Ingrese su usuario: ");
                             continue;
                         }
                      
@@ -235,9 +233,8 @@ namespace Atentificacion_y_Seguridad
                             pass = "";
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");
-                            Console.ReadKey();
                             Console.ForegroundColor = ConsoleColor.White;
-                            Console.Write("\n ~ Ingrese su clave: ");
+                            Console.WriteLine(" ~ Ingrese su clave: ");
                             continue;
                         }
 
@@ -255,7 +252,6 @@ namespace Atentificacion_y_Seguridad
                         }
                     }
                 } while (true);
-
             }
 
 
