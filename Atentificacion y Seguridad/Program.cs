@@ -20,13 +20,11 @@ using System;
 namespace Atentificacion_y_Seguridad
 {
     class Program
-    {
-
-      
+    {      
         static void Main(string[] args)
         {
             /*
-             Usuarios, contraseñas, roles, estado
+              Usuarios, contraseñas, roles, estado
 
               (sin guiones para acceder, están automáticos)
              
@@ -45,116 +43,24 @@ namespace Atentificacion_y_Seguridad
              DateTime fecha1 = new DateTime(2020, 7, 14); DateTime fecha2 = new DateTime(2020, 7, 13);
              DateTime fecha3 = new DateTime(2020, 6, 10);  DateTime fecha4 = new DateTime(2020, 1, 11);
 
-            Console.ForegroundColor = ConsoleColor.White;
+            DateTime[] fecha_de_creacion = { fecha1, fecha3, fecha3, fecha4 };
 
-            DateTime[] fecha_de_creacion = {fecha1, fecha3, fecha3, fecha4};
+            Console.ForegroundColor = ConsoleColor.White;            
+
             Console.WriteLine("\n .............................................");
             Console.WriteLine(" .............................................");
             Console.WriteLine(" ............. SISTEMA DE ACCESO ............. ");
             Console.WriteLine(" .............................................");
             Console.WriteLine(" .............................................");
 
-            string user= "";
+                              
+            string ValidacionU = Autentificar.Validar_Usuario();
+            string ValidacionP= Autentificar.Validar_Password();
+                       
 
-            Console.Write("\n ~ Ingrese su usuario: ");
-            do
-            {
-                ConsoleKeyInfo keyuser = Console.ReadKey(true);
-
-                if (keyuser.Key != ConsoleKey.Backspace && keyuser.Key != ConsoleKey.Enter)
-                {
-                    if (char.IsNumber(keyuser.KeyChar))
-                    {
-                        user += keyuser.KeyChar;
-                        Console.Write(keyuser.KeyChar);
-
-                        if (user.Length == 3 || user.Length == 11)
-                        {
-                            user += "-";
-                            Console.Write("-");
-                        }
-                        if (user.Length == 13) break;
-
-                    }
-                    else
-                    {
-                        user = "";
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
-                        
-                        user = "";
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.Write(" ~ Ingrese su usuario: ");
-                        continue;
-                    }
-
-                }
-                else
-                {
-                    if (keyuser.Key == ConsoleKey.Backspace && user.Length > 0)
-                    {
-                        user = user.Substring(0, (user.Length - 1));
-                        Console.Write("\b \b");
-                    }
-                    else if (keyuser.Key == ConsoleKey.Enter && user.Length == 13)
-                    {
-                        break;
-                    }
-                }
-            } while (true);
-
-
-
-
-            Console.Write("\n ~ Ingrese su clave: ");
-
-            string pass = "";
-
-            
-            do
-            {
-                ConsoleKeyInfo key = Console.ReadKey(true);
-               
-                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
-                {
-                    if (char.IsNumber(key.KeyChar))
-                    {
-                        pass += key.KeyChar;
-                        Console.Write("*");
-                        if (pass.Length == 4) break;            
-                
-                    }
-                    else
-                    {
-                        pass = "";
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");                        
-                        pass = "";
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.Write(" ~ Ingrese su clave: ");
-                        continue;
-                    }
-                 
-                }
-                else
-                {
-                    if (key.Key == ConsoleKey.Backspace && pass.Length > 0)
-                    {
-                    pass = pass.Substring(0, (pass.Length - 1));
-                    Console.Write("\b \b");
-                    }
-                    else if (key.Key == ConsoleKey.Enter && pass.Length == 4)
-                    {
-                        break;
-                    }
-                }
-            } while (true);
-
-          
-            while (Autentificar.comprobar(nombre, usuarios, rol, estado, password, pass, user, fecha_de_creacion) == false)
+            while (Autentificar.comprobar(nombre, usuarios, rol, estado, password, ValidacionP, ValidacionU, fecha_de_creacion) == false)
              {
-             pass = "";
-             user = "";
+           
              Console.ReadKey();                
              Console.Clear();
              Console.ForegroundColor = ConsoleColor.White;
@@ -163,97 +69,9 @@ namespace Atentificacion_y_Seguridad
              Console.WriteLine(" ............. SISTEMA DE ACCESO ............. ");
              Console.WriteLine(" .............................................");
              Console.WriteLine(" .............................................");
-  
-                Console.Write("\n ~ Ingrese su usuario: ");
-                do
-                {
-                    ConsoleKeyInfo keyuser = Console.ReadKey(true);
 
-                    if (keyuser.Key != ConsoleKey.Backspace && keyuser.Key != ConsoleKey.Enter)
-                    {
-                        if (char.IsNumber(keyuser.KeyChar))
-                        {
-                            user += keyuser.KeyChar;
-                            Console.Write(keyuser.KeyChar);
-
-                            if (user.Length == 3 || user.Length == 11)
-                            {
-                                user += "-";
-                                Console.Write("-");
-                            }
-                            if (user.Length == 13) break;
-
-                        }
-                        else
-                        {
-                            user = "";
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros (los guiones se ingresan automaticamente) ~");
-                            user = "";
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.Write(" ~ Ingrese su usuario: ");
-                            continue;
-                        }
-                     
-                    }
-                    else
-                    {
-                        if (keyuser.Key == ConsoleKey.Backspace && user.Length > 0)
-                        {
-                            user = user.Substring(0, (user.Length - 1));
-                            Console.Write("\b \b");
-                        }
-                        else if (keyuser.Key == ConsoleKey.Enter && user.Length == 13)
-                        {
-                            break;
-                        }
-                    }
-                } while (true);
-
-
-
-
-                Console.Write("\n ~ Ingrese su clave: ");
-
-
-                do
-                {
-                    ConsoleKeyInfo key = Console.ReadKey(true);
-
-                    if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
-                    {
-                        if (char.IsNumber(key.KeyChar))
-                        {
-                            pass += key.KeyChar;
-                            Console.Write("*");
-                            if (pass.Length == 4) break;
-
-                        }
-                        else
-                        {
-                            pass = "";
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("\n ~ ADVERTENCIA: Caracter invalido, solo ingrese numeros ~");
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.Write(" ~ Ingrese su clave: ");
-                            continue;
-                            
-                        }
-
-                    }
-                    else
-                    {
-                        if (key.Key == ConsoleKey.Backspace && pass.Length > 0)
-                        {
-                            pass = pass.Substring(0, (pass.Length - 1));
-                            Console.Write("\b \b");
-                        }
-                        else if (key.Key == ConsoleKey.Enter && pass.Length == 4)
-                        {
-                            break;
-                        }
-                    }
-                } while (true);
+              ValidacionU=Autentificar.Validar_Usuario();
+              ValidacionP = Autentificar.Validar_Password();
             }
 
 
