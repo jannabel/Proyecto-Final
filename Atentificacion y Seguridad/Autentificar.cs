@@ -4,7 +4,7 @@
 public class Autentificar
 {
 
-     public static bool comprobar(string[] usuarios, string[] rol, bool[] estado, int[] password, string clave, string user, DateTime[] fecha_de_creacion)
+     public static bool comprobar(string[]nombre, string[] usuarios, string[] rol, bool[] estado, int[] password, string clave, string user, DateTime[] fecha_de_creacion)
       {
 
         int clav=0;
@@ -29,7 +29,8 @@ public class Autentificar
             else if (cont == 1)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\n\n ~ Acaba de ingresar con el USUARIO: {0} y su ROL es: {1}.", usuarios[i], rol[i]);
+                Console.WriteLine("\n\n ~ Saludos, {0}.", nombre[i]);
+                Console.WriteLine("\n ~ Acaba de ingresar con el USUARIO: {0} y su ROL es: {1}.", usuarios[i], rol[i]);
                 Console.WriteLine(" ~ Este usuario fue creado : {0}", fecha_de_creacion[i]);
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n\n ~ Presione ESC o cualquier tecla para salir. ~");
@@ -54,7 +55,8 @@ public class Autentificar
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\n\n ~ Este usuario esta inactivo ~ ");
-                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\n\n ~ Presione una tecla para continuar y validar otro usuario ");
                 return false;
             }
         }

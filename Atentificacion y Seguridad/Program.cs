@@ -37,6 +37,7 @@ namespace Atentificacion_y_Seguridad
 
                                           
             string[] usuarios = { "001-0285160-5", "123-4567891-0", "256-8974125-6", "461-0000045-1"};
+            String[] nombre= { "Allena Gómez", "Hannah Mejía", "Johnny Ramos", "Jesús Reyes" };
             int[] password = { 1234, 5670, 8901, 1011 };
             String[] rol = { "Supervisor", "Administrador", "Vendedor" , "Vendedor" };
             bool[] estado= { true, true, false, true};
@@ -150,7 +151,7 @@ namespace Atentificacion_y_Seguridad
             } while (true);
 
           
-            while (Autentificar.comprobar(usuarios, rol, estado, password, pass, user, fecha_de_creacion) == false)
+            while (Autentificar.comprobar(nombre, usuarios, rol, estado, password, pass, user, fecha_de_creacion) == false)
              {
              pass = "";
              user = "";
@@ -236,6 +237,7 @@ namespace Atentificacion_y_Seguridad
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Write(" ~ Ingrese su clave: ");
                             continue;
+                            
                         }
 
                     }
