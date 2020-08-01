@@ -43,7 +43,7 @@ namespace Atentificacion_y_Seguridad
              DateTime fecha1 = new DateTime(2020, 7, 14); DateTime fecha2 = new DateTime(2020, 7, 13);
              DateTime fecha3 = new DateTime(2020, 6, 10);  DateTime fecha4 = new DateTime(2020, 1, 11);
 
-            DateTime[] fecha_de_creacion = { fecha1, fecha3, fecha3, fecha4 };
+            DateTime[] fecha_de_creacion = { fecha1, fecha2, fecha3, fecha4 };
 
             Console.ForegroundColor = ConsoleColor.White;            
 
